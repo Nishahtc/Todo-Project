@@ -1,28 +1,63 @@
+import uuid
+from src.utility.check_user import check_user
+from src.user_managemnet.user_model import UserModel
+from src.user_managemnet.user import User
+
+
+class UserManage(User):
+    def user_signup(self, name, email, password, role):
+        if(check_user(email)):
+            print("Email already exist please try another email.")
+        else:
+            id = str(uuid.uuid4())[:10]
+            new_user = UserModel(id, name, email, password, role)
+            self.users.append(new_user)
+            self.save_users()
+            print("Signup successfully please login.")
+
+    def user_login(self, email, password):
+
+        """for user in self.users:
+            if(user.email == email ):
+                if(user.password == password):
+                    print("Login successfully.")
+                else:
+                    print("wrong password")"""
+        
+        print(self.users)
 
 
 
 
-class UserManage:
-    def __init__(self):
-        self.user = {}
 
-    def signup(self, id, name, email, password):
-        try:
-            if id in self.user:
-                print(f"{self.user} is alrady exist please enter different id") 
 
-            if name in self.user:
-                print(f"{self.user} is alrady exist please enter different name")
+
+
+
+
+
+        
+
+
             
-            if email in self.user:
-                print(f"{self.user} is alrady exist please enter different email")
+
+
+
+
             
-            if password in self.user:
-                print(f"{self.user} is alrady exist please enter different password")
-        except Exception as error:
-            print(error)
+
+        
+
+
+
+
+
+       
             
-    def login(self,name,password):
+
+            
+            
+    def user_login(self,name,password):
         try:
             if self.user in self.user and self.user[name]==password:
                 print("Login successfully. ") 
