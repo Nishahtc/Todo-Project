@@ -2,6 +2,8 @@ import uuid
 from src.utility.check_user import check_user
 from src.user_managemnet.user_model import UserModel
 from src.user_managemnet.user import User
+from src.dashboard import dashboard
+
 
 
 class UserManage(User):
@@ -17,73 +19,11 @@ class UserManage(User):
 
     def user_login(self, email, password):
 
-        """for user in self.users:
+        for user in self.users:
             if(user.email == email ):
                 if(user.password == password):
-                    print("Login successfully.")
+                    dashboard()
                 else:
-                    print("wrong password")"""
+                    print("wrong password")
         
-        print(self.users)
-
-
-
-
-
-
-
-
-
-
-
         
-
-
-            
-
-
-
-
-            
-
-        
-
-
-
-
-
-       
-            
-
-            
-            
-    def user_login(self,name,password):
-        try:
-            if self.user in self.user and self.user[name]==password:
-                print("Login successfully. ") 
-                
-            else:
-                print("invalid username or password ") 
-        except Exception as error:
-            print(error)
-                
-
-
-
-
-
-
-
-
-             
-        
-
-           
-
-
-
-
-           
-   
-
-    

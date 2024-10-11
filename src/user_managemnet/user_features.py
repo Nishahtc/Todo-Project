@@ -3,8 +3,8 @@ from src.utility.validation import *
 from src.utility.check_user import check_user
 
 
-class UserFeature():
-    user_manage = UserManage()
+class UserFeature(UserManage):
+    
     
     def signup(self):
         try:
@@ -24,7 +24,7 @@ class UserFeature():
             if(not role):
                 raise Exception("please enter a valid role.")
             
-            user_manage.UserManage user_signup(name,email,password,role)
+            self.user_signup(name,email,password,role)
         except Exception as error:
             print(error)   
             
@@ -40,9 +40,9 @@ class UserFeature():
             password = validate_password(input("Enter password : "))
             if(not password):
                 raise Exception("Please enter valid password.")
-            print("before")
+           
             self.user_login(email,password)
-            print("after")
+            
         except Exception as error:
             print(error)   
 

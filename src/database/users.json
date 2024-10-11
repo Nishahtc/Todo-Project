@@ -5,5 +5,12 @@
         "email": "mansoor@gmail.com",
         "password": "Mansoor@11",
         "role": "admin"
+    },
+    {
+        "id": "64a6b066-8",
+        "name": "nisha",
+        "email": "nisha@19gmail.com",
+        "password": "Nisha%1",
+        "role": "user"
     }
 ]
